@@ -28,7 +28,6 @@ export function ArtworkCanvas() {
 
   const handleZoomIn = () => setZoom((prev) => Math.min(prev + 10, 200))
   const handleZoomOut = () => setZoom((prev) => Math.max(prev - 10, 50))
-  const handleReset = () => setZoom(100)
 
   const handleRotateCcw = () => setRotation((prev) => prev - 90)
   const handleRotateCw = () => setRotation((prev) => prev + 90)
@@ -57,15 +56,12 @@ export function ArtworkCanvas() {
             const isEditable = type === "text" || type === "file"
             const isHovered = hoveredLayer === index
 
-            // Positioning logic based on coordinates
-            // Assuming xAxis/yAxis are center points of the elements in percentages
-            // and size is roughly the width percentage.
             const layerStyle: React.CSSProperties = {
               position: "absolute",
               left: `${xAxis}%`,
               top: `${yAxis}%`,
               width: `${size}%`,
-              transform: `translate(-50%, -50%)`, // Center at coordinates
+              transform: `translate(-50%, -50%)`,
               zIndex: 10 + index,
             }
 

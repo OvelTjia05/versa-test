@@ -37,6 +37,9 @@ export function ArtworkSidebar() {
           <span className="flex items-center gap-1">
             <Eye className="h-4 w-4" /> {artworkData.views} views
           </span>
+          <span className="flex items-center gap-1">
+            <Heart className="h-4 w-4" /> {artworkData.wishlist} saves
+          </span>
         </div>
       </CardHeader>
 
